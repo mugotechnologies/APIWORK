@@ -1,0 +1,52 @@
+{%extends "home.html"%}
+{%block contents%}
+
+
+<form class="container" method="post">
+    <h2><i class="bi bi-cloud-haze"></i>Weather App</h2>
+
+    <div class="form-group">
+      <label>City Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="City Name"
+        name="name"
+      />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Get weather details</button>
+  </form>
+
+  {%endblock%}
+
+  {%block details%}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card text-dark bg-white mb-3" style="max-width: 20rem">
+          <div class="card-body">
+            <h1 class="card-title">{{ city_name }}  {{country}}</h1>
+            <div class="info">
+              <div class="right">
+                <h3 class="card-text">{{ temp }}&deg;C</h3>
+                <h4 class="card-text">{{ weather }}</h4>
+              </div>
+              <div class="left">
+                &nbsp;&nbsp;
+
+                <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="" />
+              </div>
+            </div>
+
+            <br />
+            <h5>Country : {{country}}</h5>
+            <h5>Condition : {{condition}}</h5>
+            <h5>wind : {{wind}} Kph</h5>
+            
+          </div>
+        </div>
+    </div>
+    {%endblock%}
+ 

@@ -1,0 +1,35 @@
+{%extends "home.html"%}
+{%block contents%}
+<form class="container" method="post" action="/home">
+    <h2><i class="bi bi-cloud-haze"></i>Photo App</h2>
+
+    <div class="form-group">
+      <label>category</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="City Name"
+        name="name"
+      />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Get photo details</button>
+</form>
+
+{%endblock%}
+
+{%block details%}
+<div class="container">
+  <div class="card mb-3">
+    <img src="data:image/jpeg;base64,{{ photo }}" alt="Love Photo">
+    <div class="card-body">
+      <h5 class="card-title">{{category}}</h5>
+      <p class="card-text">This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">{{category}}</small></p>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
+ 

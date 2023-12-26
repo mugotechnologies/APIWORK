@@ -1,0 +1,28 @@
+{%extends "home.html"%}
+{%block contents%}
+<form class="container" method="post" action="/love2">
+    <h2><i class="bi bi-cloud-haze"></i>love category</h2>
+    <button type="submit">get categories</button>
+  </form>
+
+  {%endblock%}
+
+  {%block details%}
+  
+
+
+    
+    {% if tags %}
+        <h2>Tags:</h2>
+        <ul>
+            {% for tag in tags %}
+                <li>{{ tag }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {%endblock%}
+ 
